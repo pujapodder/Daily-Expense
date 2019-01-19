@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+//import { AngularFireAuthModule } from 'angularfire2/auth';
+
+import { AngularFireAuth } from 'angularfire2/auth';
 
 /**
  * Generated class for the RegistrationPage page.
@@ -14,10 +17,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'registration.html',
 })
 export class RegistrationPage {
-  username:string;
-  password:string;
-  Cpassword:string;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  private username:string;
+  private password:string;
+  private Cpassword:string;
+
+  constructor(public eauth : AngularFireAuth , public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -41,6 +45,8 @@ export class RegistrationPage {
       alert("Sign up complete");
       console.log("Username: "+ this.username);
       console.log("Password: "+ this.password);
+      this.eauth.auth.createUserWithEmailAndPassword(this.username,this.password).then(e=>{console.log(e)}) ;
+    
     }
   
   
