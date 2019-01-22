@@ -27,7 +27,7 @@ export class RegistrationPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegistrationPage');
   }
-  goSignup(){
+  async goSignup(){
 
     //console.log("Username: "+ this.username);
     //console.log("Password: "+ this.password);
@@ -45,8 +45,15 @@ export class RegistrationPage {
       alert("Sign up complete");
       console.log("Username: "+ this.username);
       console.log("Password: "+ this.password);
-      this.eauth.auth.createUserWithEmailAndPassword(this.username,this.password).then(e=>{console.log(e)}) ;
-    
+      try {
+        var r = await this.eauth.auth.createUserWithEmailAndPassword(this.username,this.password).then(e=>{console.log(e)}) ;
+        this.navCtrl.pop();
+      }
+
+    catch (err) {
+      console.error(err);
+      alert(err);
+    }
     }
   
   

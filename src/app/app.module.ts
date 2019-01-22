@@ -7,12 +7,18 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { RegistrationPage } from '../pages/registration/registration';
+import {PrimaryTabsPage } from '../pages/primary-tabs/primary-tabs';
 import {AngularFireModule} from 'angularfire2'
 import {AngularFireDatabaseModule} from 'angularfire2/database'
-//import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AuthProvider } from '../providers/auth/auth';
 import { AngularFireAuthModule  } from 'angularfire2/auth';
 import { FirebaseServiceProvider } from '../providers/firebase-service/firebase-service';
+
+
+//import {PrimaryTabsPageModule } from '../pages/primary-tabs/primary-tabs.module';
+import{AddPageModule}  from '../pages/add/add.module';
+import{EditPageModule}  from '../pages/edit/edit.module';
+import{DeletePageModule}  from '../pages/delete/delete.module';
 
 
 
@@ -26,12 +32,12 @@ var config = {
 };
 
 
-
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    RegistrationPage
+    RegistrationPage,
+    PrimaryTabsPage,
   ],
   imports: [
     BrowserModule,
@@ -40,12 +46,19 @@ var config = {
     AngularFireModule.initializeApp(config),
    AngularFireDatabaseModule,
     AngularFireAuthModule ,
+   // PrimaryTabsPageModule,
+    AddPageModule,
+    EditPageModule,
+    DeletePageModule
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    RegistrationPage
+    RegistrationPage,
+    PrimaryTabsPage,
+
   ],
   providers: [
     StatusBar,

@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { RegistrationPage } from '../registration/registration';
-//import { AngularFireAuthModule } from 'angularfire2/auth';
-import {AngularFireModule} from 'angularfire2'
 import { AngularFireAuth } from 'angularfire2/auth';
+import {PrimaryTabsPage } from '../primary-tabs/primary-tabs';
 
 
 @Component({
@@ -27,6 +26,7 @@ goLogin(){
  // this.changeLogo();
  // email authentication
  this.eauth.auth.signInWithEmailAndPassword(this.username,this.password).then(e=> {console.log(e)});
+this.navCtrl.push(PrimaryTabsPage); 
 
 }
 //changeLogo() {
