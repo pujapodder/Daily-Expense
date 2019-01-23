@@ -1,0 +1,15 @@
+page-logout {
+    ion-content{
+        background: radial-gradient( #fff 50%, rgba(0, 255, 13, 0.753) 150%);
+      //  vertical-align: middle;
+        text-align: center; 
+       
+    }
+    .scroll-content{
+         justify-content: center;
+        display: flex!important;
+      align-items: center!important;
+      text-align: center!important; 
+    }
+
+}

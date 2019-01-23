@@ -19,7 +19,8 @@ import { FirebaseServiceProvider } from '../providers/firebase-service/firebase-
 import{AddPageModule}  from '../pages/add/add.module';
 import{EditPageModule}  from '../pages/edit/edit.module';
 import{DeletePageModule}  from '../pages/delete/delete.module';
-
+import{GraphsPageModule}  from '../pages/graphs/graphs.module';
+import{LogoutPageModule}  from '../pages/logout/logout.module';
 
 
 var config = {
@@ -49,7 +50,9 @@ var config = {
    // PrimaryTabsPageModule,
     AddPageModule,
     EditPageModule,
-    DeletePageModule
+    DeletePageModule,
+    GraphsPageModule,
+    LogoutPageModule
 
   ],
   bootstrap: [IonicApp],

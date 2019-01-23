@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import{AddItem} from'../../model/additems/add-item.interface';
+import {AngularFireDatabase,FirebaseListObservable} from 'angularfire2/database'
 /**
  * Generated class for the AddPage page.
  *
@@ -14,12 +15,26 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'add.html',
 })
 export class AddPage {
+  //Creating new object
+   addexpenses = {} as AddItem;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  creditRef$: FirebaseListObservable <AddItem[]>; 
+  constructor(public navCtrl: NavController, public navParams: NavParams, private database:AngularFireDatabase) {
+  this.creditRef$ = this.database.list("Daily Expenses");
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AddPage');
-  }
-
+save(addexpenses : AddItem)
+{
+  console.log(addexpenses);
+  //push everthing as string in firebase database
+  this.creditRef$.push(this.addexpenses);
+  /*Create an anonymous object 
+    and push credit spent as number in firebase database
+ 
+ */
+ 
+  // this.creditRef$.push({
+  //creditspent: Number(this.addexpenses.creditspent);
+  //});
+}
 }

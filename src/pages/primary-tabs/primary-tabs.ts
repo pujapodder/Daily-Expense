@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
-
+//import { HomePage } from '../pages/home/home';
 /**
  * Generated class for the PrimaryTabsPage tabs.
  *
@@ -18,8 +18,13 @@ export class PrimaryTabsPage {
   addRoot = 'AddPage'
   editRoot = 'EditPage'
   deleteRoot = 'DeletePage'
-
+  graphsRoot = 'GraphsPage'
+  logoutRoot = 'LogoutPage'
 
   constructor(public navCtrl: NavController) {}
 
+
+//logout(){
+  //this.navCtrl.pop();
+//}
 }
