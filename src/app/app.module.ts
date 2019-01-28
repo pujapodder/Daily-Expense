@@ -7,7 +7,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { RegistrationPage } from '../pages/registration/registration';
-import {PrimaryTabsPage } from '../pages/primary-tabs/primary-tabs';
+import { PrimaryTabsPage } from '../pages/primary-tabs/primary-tabs';
+import { UpdatePage } from '../pages/update/update';
+
 import {AngularFireModule} from 'angularfire2'
 import {AngularFireDatabaseModule} from 'angularfire2/database'
 import { AuthProvider } from '../providers/auth/auth';
@@ -39,6 +41,7 @@ var config = {
     HomePage,
     RegistrationPage,
     PrimaryTabsPage,
+    UpdatePage,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,7 @@ var config = {
     EditPageModule,
     DeletePageModule,
     GraphsPageModule,
-    LogoutPageModule
+    LogoutPageModule,
 
   ],
   bootstrap: [IonicApp],
@@ -61,6 +64,7 @@ var config = {
     HomePage,
     RegistrationPage,
     PrimaryTabsPage,
+    UpdatePage,
 
   ],
   providers: [
@@ -69,6 +73,7 @@ var config = {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
     FirebaseServiceProvider,
+
 
   ]
 })

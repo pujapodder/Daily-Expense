@@ -21,7 +21,9 @@ export class PrimaryTabsPage {
   graphsRoot = 'GraphsPage'
   logoutRoot = 'LogoutPage'
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController) {
+    
+  }
 
 
 //logout(){

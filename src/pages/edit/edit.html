@@ -6,13 +6,33 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Edit</ion-title>
+  <ion-navbar color = "dark">
+    <ion-title>Expense History</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <ion-list>
+         
+          <ion-item-sliding *ngFor = "let item of expenselistRef$| async">
+          <ion-item>
+            <h5>Store Name = {{item.storename}} </h5>
+            <h5>Credit Spent = {{item.creditspent}} </h5>
+            <h5>Category  = {{item.category}} </h5>
+            <h5>Date  = {{item.date}} </h5>
+            <h5>Time = {{item.time}} </h5>
+        
+            <ion-item>
+            <ion-item-options side = "right">
+            <button  ion-button (click)= "edititem(item.$key,item.storename,item.creditspent,item.category,item.date,item.time )" ><ion-icon name="ios-create"></ion-icon></button>
+            <button  ion-button color= "danger" (click)= "removeitem(item.$key)" > <ion-icon name="ios-trash"></ion-icon>  </button>
+            </ion-item-options>
+          </ion-item>
+        </ion-item>
+            </ion-item-sliding>
+      
+             
+            </ion-list>
 </ion-content>

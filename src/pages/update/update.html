@@ -1,5 +1,5 @@
 <!--
-  Generated template for the AddPage page.
+  Generated template for the UpdatePage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color = "dark">
-    <ion-title>Add</ion-title>
+    <ion-title>Update Your Expense History </ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -17,29 +17,29 @@
   <ion-list>
       <ion-item>
           <ion-label color="black" floating>Store Name</ion-label>
-       <ion-input  [(ngModel)]="addexpenses.storename"></ion-input>
+       <ion-input  [(ngModel)]="updatedexpense.storename"></ion-input>
      </ion-item>
      <ion-item>
         <ion-label color="black" floating>Credit Spent</ion-label>
-      <ion-input  [(ngModel)]="addexpenses.creditspent"></ion-input>
+      <ion-input  [(ngModel)]="updatedexpense.creditspent"></ion-input>
     </ion-item>
     <ion-item>
 
         <ion-label color="black" floating>Date</ion-label>
-        <ion-datetime displayFormat="DD-MM-YYYY " [(ngModel)]="addexpenses.date"></ion-datetime>
+        <ion-datetime displayFormat="DD-MM-YYYY " [(ngModel)]="updatedexpense.date"></ion-datetime>
       </ion-item>
       <ion-item>
   
           <ion-label color="black" floating>Time</ion-label>
-          <ion-datetime displayFormat="HH:mm" [(ngModel)]="addexpenses.time"></ion-datetime>
+          <ion-datetime displayFormat="HH:mm" [(ngModel)]="updatedexpense.time"></ion-datetime>
         </ion-item>
  
   <ion-item>
       <ion-label color="black" floating>Category</ion-label>
-    <ion-input  [(ngModel)]="addexpenses.category"></ion-input>
+    <ion-input  [(ngModel)]="updatedexpense.category"></ion-input>
   </ion-item>
   
-  <button  ion-button round color="light" (click)= "save(addexpenses)"> Save</button>
+  <button  ion-button round color="light" (click)= "update(id,storename,creditspent,category,date,time)"> Update</button>
   <button ion-button round color="light" (click)= "cancel()"> Cancel</button>
 
 </ion-list>

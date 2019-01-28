@@ -18,15 +18,23 @@ export class HomePage {
   logoUrl: string = "assets/imgs/running-money-gif.gif";
 
   constructor(public eauth : AngularFireAuth,public navCtrl: NavController) {
-
+    console.log("@alia login", this.eauth.auth.currentUser);
+    if (this.eauth.auth.currentUser != null) {
+      this.navCtrl.push(PrimaryTabsPage); 
+    }
   }
 goLogin(){
   console.log("Username: "+ this.username);
   console.log("Password: "+ this.password);
  // this.changeLogo();
  // email authentication
- this.eauth.auth.signInWithEmailAndPassword(this.username,this.password).then(e=> {console.log(e)});
-this.navCtrl.push(PrimaryTabsPage); 
+ this.eauth.auth.signInWithEmailAndPassword(this.username,this.password).then(e=> {
+   console.log(e);
+   // @ts-ignore
+  // if (document.getElementsByName("Primary Tabs") != undefined) document.getElementsByName("Primary Tabs").style.display="block";
+   this.navCtrl.setRoot(PrimaryTabsPage);
+  });
+ 
 
 }
 //changeLogo() {

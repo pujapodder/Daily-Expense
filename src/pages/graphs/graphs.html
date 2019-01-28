@@ -6,13 +6,27 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Graphs</ion-title>
+  <ion-navbar color = "dark">
+    <ion-title>Graphs </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <ion-list> 
+ 
+      <h1>   <ion-label color="black" >Total Money Spent = {{total}}</ion-label></h1> 
+    
+  </ion-list>
+
+  <ion-card>
+    <ion-card-header>
+      Bar Chart
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #barCanvas></canvas>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>
